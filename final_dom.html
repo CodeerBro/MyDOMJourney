@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and remove</title>
+</head>
+<body style="background-color: #212121; color: white;">
+      <ul class = "Language">
+         <li>Javascript</li>
+      </ul>         
+</body>
+<script>
+    function addLanguage(langName){
+      const li =  document.createElement('li')
+      li.innerHTML = `${langName}`
+      document.querySelector('.Language').appendChild(li)
+
+    }
+    addLanguage("python")
+    addLanguage("python")
+    addLanguage("HTML")
+    addLanguage("Tailwind")
+
+       function addOptiLanguage(langName){
+               const li  =   document.createElement('li')
+                  li.appendChild(document.createTextNode(langName))
+                  document.querySelector('.Language').appendChild(li)
+
+       }
+       addOptiLanguage("Go lang")
+    
+       //Let's edit some value.
+
+         const secondLang = document.querySelector("li:nth-child(2)")
+         
+           const newLi = document.createElement('li') // --OPTIMIZED WAY--
+           newLi.textContent = "Mojo"
+           secondLang.replaceWith(newLi)
+
+
+           // edit
+           firstLang = document.querySelector("li:nth-child(1)")
+        //    const newli2 = document.createElement('li')
+        //    newli2.textContent = "Kotlin"
+        //    firstLang.replaceWith(newli2)
+              
+        //-- AnotherWay--
+        firstLang.outerHTML = '<li>Kotlin</li>'
+
+
+        // --- REMOVE --
+        const lastLang = document.querySelector('li:last-child')
+        lastLang.remove()  //Go lang will be disappear beacuse of last element.
+
+        
+
+
+           
+
+</script>
+</html>
